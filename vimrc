@@ -10,11 +10,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'NLKNguyen/papercolor-theme'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax enable
+set background=dark
+colorscheme PaperColor
 set number
 set wildmenu
 set lazyredraw

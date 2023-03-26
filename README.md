@@ -15,6 +15,7 @@ $ mkdir -p $HOME/.vim/bundle/Vundle.vim
 $ mkdir -p $HOME/.vim/bundle/preservim/nerdtree
 $ mkdir -p $HOME/.vim/bundle/airblade/vim-gitgutter
 $ mkdir -p $HOME/.vim/bundle/jiangmiao/auto-pairs
+$ mkdir -p $HOME/.vim/pack/colors/start
 ```
 
 **Clone important repos**
@@ -23,6 +24,7 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle
 $ git clone https://github.com/preservim/nerdtree.git $HOME/.vim/bundle/preservim/nerdtree
 $ git clone https://github.com/airblade/vim-gitgutter.git $HOME/.vim/bundle/airblade/vim-gitgutter
 $ git clone https://github.com/jiangmiao/auto-pairs.git $HOME/.vim/bundle/jiangmiao/auto-pairs
+$ git clone https://github.com/NLKNguyen/papercolor-theme.git $HOME/.vim/pack/colors/start/papercolor-theme
 ```
 
 **Copy vimrc**
