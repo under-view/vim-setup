@@ -4,6 +4,11 @@ Repo walk through good vim configuration and plugins to utilize when
 developing Underview software.
 
 
+**Install Depends**
+```sh
+$ sudo apt -y install vim
+```
+
 **Create bundle + plugin directories**
 ```sh
 $ mkdir -p $HOME/.vim/bundle/Vundle.vim
