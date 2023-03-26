@@ -8,12 +8,14 @@ developing Underview software.
 ```sh
 $ mkdir -p $HOME/.vim/bundle/Vundle.vim
 $ mkdir -p $HOME/.vim/bundle/preservim/nerdtree
+$ mkdir -p $HOME/.vim/bundle/airblade/vim-gitgutter
 ```
 
 **Clone important repos**
 ```sh
 $ git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 $ git clone https://github.com/preservim/nerdtree.git $HOME/.vim/bundle/preservim/nerdtree
+$ git clone https://github.com/airblade/vim-gitgutter.git $HOME/.vim/bundle/airblade/vim-gitgutter
 ```
 
 **Copy vimrc**
