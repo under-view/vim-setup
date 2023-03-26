@@ -26,6 +26,8 @@ inoremap <C-d> <esc>:wq!<cr>
 nnoremap <C-d> :wq!<cr>
 inoremap <C-q> <esc>:qa!<cr>
 nnoremap <C-q> :qa!<cr>
+nnoremap + :res +5<CR>
+nnoremap _ :res -5<CR>
 
 syntax enable
 set background=dark
@@ -36,6 +38,10 @@ set lazyredraw
 set showmatch
 set incsearch
 set hlsearch
+
+" NERDTree show hidden files
+let NERDTreeShowHidden=1
+let g:NERDTreeWinSize=50
 
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
