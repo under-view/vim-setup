@@ -32,5 +32,4 @@ $ git clone https://github.com/NLKNguyen/papercolor-theme.git $HOME/.vim/pack/co
 $ cp -v $(pwd)/vimrc $HOME/.vimrc
 ```
 
-1. Restart Vim, and run the `:PluginInstall` statement to install plugins.
-2. Uncomment commands that are commented out in `vimrc`
+Restart Vim, and run the `:PluginInstall` statement to install plugins.
