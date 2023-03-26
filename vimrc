@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -35,4 +36,4 @@ set hlsearch
 " for window quiting use Ctrl + q on command mode
 " Need run this command: echo 'stty -ixon' >> ~/.bashrc && exec $SHELL
 "map <C-s> :write<CR>
-"map <C-q> :quit<CR>
+"map <C-q> :quit!<CR>
