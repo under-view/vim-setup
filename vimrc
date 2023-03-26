@@ -35,8 +35,14 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
 	\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
-" for file saving use Ctrl + s on command mode
-" for window quiting use Ctrl + q on command mode
+" Ctrl + s - save file
+" Ctrl + d - save & exit
+" Ctrl + q - quit discarding changes
 " Need run this command: echo 'stty -ixon' >> ~/.bashrc && exec $SHELL
-map <C-s> :write<CR>
-map <C-q> :quit!<CR>
+inoremap <C-s> <esc>:w<cr>
+nnoremap <C-s> :w<cr>
+inoremap <C-d> <esc>:wq!<cr>
+nnoremap <C-d> :wq!<cr>
+inoremap <C-q> <esc>:qa!<cr>
+nnoremap <C-q> :qa!<cr>
+
