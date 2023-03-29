@@ -13,6 +13,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'igankevich/mesonic'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'kergoth/vim-bitbake'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
