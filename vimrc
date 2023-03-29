@@ -13,6 +13,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'igankevich/mesonic'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'kergoth/vim-bitbake'
+Plugin 'bfrg/vim-cpp-modern'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -44,6 +45,12 @@ set hlsearch
 " NERDTree show hidden files
 let NERDTreeShowHidden=1
 let g:NERDTreeWinSize=50
+
+" Affects both C and C++ files
+let g:cpp_function_highlight = 1
+let g:cpp_attributes_highlight = 1
+let g:cpp_member_highlight = 1
+let g:cpp_simple_highlight = 1
 
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
