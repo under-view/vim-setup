@@ -11,7 +11,6 @@ Plugin 'preservim/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'igankevich/mesonic'
-Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'kergoth/vim-bitbake'
 
@@ -31,9 +30,10 @@ nnoremap <C-q> :qa!<cr>
 nnoremap + :res +5<CR>
 nnoremap _ :res -5<CR>
 
+packadd! onedark.vim
 syntax enable
 set background=dark
-colorscheme PaperColor
+colorscheme onedark
 set number
 set wildmenu
 set lazyredraw
