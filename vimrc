@@ -52,6 +52,9 @@ let g:cpp_attributes_highlight = 1
 let g:cpp_member_highlight = 1
 let g:cpp_simple_highlight = 1
 
+" Enable vulkan syntax
+autocmd FileType cpp,c source $HOME/.vim/syntax/vulkan.vim
+
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 

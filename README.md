@@ -19,6 +19,7 @@ $ mkdir -p $HOME/.vim/bundle/igankevich/mesonic
 $ mkdir -p $HOME/.vim/bundle/tikhomirov/vim-glsl
 $ mkdir -p $HOME/.vim/bundle/kergoth/vim-bitbake
 $ mkdir -p $HOME/.vim/bundle/bfrg/vim-cpp-modern
+$ mkdir -p $HOME/.vim/syntax
 $ mkdir -p $HOME/.vim/pack/colors/start
 $ mkdir -p $HOME/.vim/pack/themes/start
 ```
@@ -34,6 +35,10 @@ $ git clone https://github.com/igankevich/mesonic.git $HOME/.vim/bundle/igankevi
 $ git clone https://github.com/tikhomirov/vim-glsl.git $HOME/.vim/bundle/tikhomirov/vim-glsl
 $ git clone https://github.com/kergoth/vim-bitbake.git $HOME/.vim/bundle/kergoth/vim-bitbake
 $ git clone https://github.com/bfrg/vim-cpp-modern.git $HOME/.vim/bundle/bfrg/vim-cpp-modern
+
+# Syntax
+$ git clone https://github.com/under-view/vim-vulkan.git $HOME/.vim/syntax/
+$ rm -v $HOME/.vim/syntax/README.md
 
 # Colors
 $ git clone https://github.com/joshdick/onedark.vim.git $HOME/.vim/pack/colors/start
