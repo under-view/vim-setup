@@ -31,6 +31,9 @@ nnoremap <C-q> :qa!<cr>
 nnoremap + :res +5<CR>
 nnoremap _ :res -5<CR>
 
+" \<space> removes highlighted search results
+map <Leader><Space> :noh<CR>
+
 packadd! onedark.vim
 syntax enable
 set background=dark
@@ -44,7 +47,7 @@ set hlsearch
 
 " NERDTree show hidden files
 let NERDTreeShowHidden=1
-let g:NERDTreeWinSize=50
+let g:NERDTreeWinSize=40
 
 " Affects both C and C++ files
 let g:cpp_function_highlight = 1
