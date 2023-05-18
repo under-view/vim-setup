@@ -3,10 +3,11 @@
 Repo walk through good vim configuration and plugins to utilize when
 developing Underview software.
 
+[use-vim-ctags](https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html)
 
 **Install Depends**
 ```sh
-$ sudo apt -y install vim
+$ sudo apt -y install vim exuberant-ctags
 ```
 
 **Create bundle + plugin directories**
