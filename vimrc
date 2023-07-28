@@ -34,7 +34,6 @@ nnoremap _ :res -5<CR>
 " \<space> removes highlighted search results
 map <Leader><Space> :noh<CR>
 
-packadd! onedark.vim
 syntax enable
 set background=dark
 colorscheme onedark
