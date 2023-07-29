@@ -35,7 +35,7 @@ create_directories() {
 
 
 clone_plugins_syntax_colors() {
-	# Plugins
+	# Bundle Plugins
 	git clone "${GIT_URL}/VundleVim/Vundle.vim.git"   "${VIM_INSTALL_DIR}/bundle/Vundle.vim"             || return $FAILURE
 	git clone "${GIT_URL}/preservim/nerdtree.git"     "${VIM_INSTALL_DIR}/bundle/preservim/nerdtree"     || return $FAILURE
 	git clone "${GIT_URL}/airblade/vim-gitgutter.git" "${VIM_INSTALL_DIR}/bundle/airblade/vim-gitgutter" || return $FAILURE
@@ -45,13 +45,18 @@ clone_plugins_syntax_colors() {
 	git clone "${GIT_URL}/kergoth/vim-bitbake.git"    "${VIM_INSTALL_DIR}/bundle/kergoth/vim-bitbake"    || return $FAILURE
 	git clone "${GIT_URL}/bfrg/vim-cpp-modern.git"    "${VIM_INSTALL_DIR}/bundle/bfrg/vim-cpp-modern"    || return $FAILURE
 
+	# Pack Colors
+	git clone "${GIT_URL}/habamax/vim-rst.git"        "${VIM_INSTALL_DIR}/pack/colors/start/vim-rst" || return $FAILURE
+
 	# Syntax
 	git clone "${GIT_URL}/under-view/vim-vulkan.git" "${VIM_INSTALL_DIR}/syntax"           || return $FAILURE
 	rm                                               "${VIM_INSTALL_DIR}/syntax/README.md" || return $FAILURE
 
-	# Colors
+	# Autoload
 	git clone "${GIT_URL}/joshdick/onedark.vim.git"       "${VIM_INSTALL_DIR}/onedark.vim" || return $FAILURE
 	cp -ra    "${VIM_INSTALL_DIR}/onedark.vim/autoload"/* "${VIM_INSTALL_DIR}/autoload"    || return $FAILURE
+
+	# Colors
 	cp -ra    "${VIM_INSTALL_DIR}/onedark.vim/colors"/*   "${VIM_INSTALL_DIR}/colors"      || return $FAILURE
 	rm -rf                                                "${VIM_INSTALL_DIR}/onedark.vim" || return $FAILURE
 
