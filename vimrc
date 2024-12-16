@@ -14,6 +14,7 @@ Plugin 'igankevich/mesonic'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'kergoth/vim-bitbake'
 Plugin 'bfrg/vim-cpp-modern'
+Plugin 'vhda/verilog_systemverilog.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

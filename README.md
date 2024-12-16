@@ -14,5 +14,3 @@ $ sudo apt -y install vim exuberant-ctags
 ```sh
 $ ./install.sh
 ```
-
-Restart Vim, and run the `:PluginInstall` statement to install plugins.

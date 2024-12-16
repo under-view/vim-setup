@@ -20,6 +20,7 @@ create_directories() {
 	mkdir -p "${VIM_INSTALL_DIR}/bundle/tikhomirov/vim-glsl"
 	mkdir -p "${VIM_INSTALL_DIR}/bundle/kergoth/vim-bitbake"
 	mkdir -p "${VIM_INSTALL_DIR}/bundle/bfrg/vim-cpp-modern"
+	mkdir -p "${VIM_INSTALL_DIR}/bundle/vhda/verilog_systemverilog.vim"
 
 	mkdir -p "${VIM_INSTALL_DIR}/pack/colors/start"
 	mkdir -p "${VIM_INSTALL_DIR}/pack/themes/start"
@@ -36,29 +37,69 @@ create_directories() {
 
 clone_plugins_syntax_colors() {
 	# Bundle Plugins
-	git clone "${GIT_URL}/VundleVim/Vundle.vim.git"   "${VIM_INSTALL_DIR}/bundle/Vundle.vim"             || return $FAILURE
-	git clone "${GIT_URL}/preservim/nerdtree.git"     "${VIM_INSTALL_DIR}/bundle/preservim/nerdtree"     || return $FAILURE
-	git clone "${GIT_URL}/airblade/vim-gitgutter.git" "${VIM_INSTALL_DIR}/bundle/airblade/vim-gitgutter" || return $FAILURE
-	git clone "${GIT_URL}/jiangmiao/auto-pairs.git"   "${VIM_INSTALL_DIR}/bundle/jiangmiao/auto-pairs"   || return $FAILURE
-	git clone "${GIT_URL}/igankevich/mesonic.git"     "${VIM_INSTALL_DIR}/bundle/igankevich/mesonic"     || return $FAILURE
-	git clone "${GIT_URL}/tikhomirov/vim-glsl.git"    "${VIM_INSTALL_DIR}/bundle/tikhomirov/vim-glsl"    || return $FAILURE
-	git clone "${GIT_URL}/kergoth/vim-bitbake.git"    "${VIM_INSTALL_DIR}/bundle/kergoth/vim-bitbake"    || return $FAILURE
-	git clone "${GIT_URL}/bfrg/vim-cpp-modern.git"    "${VIM_INSTALL_DIR}/bundle/bfrg/vim-cpp-modern"    || return $FAILURE
+	git clone "${GIT_URL}/VundleVim/Vundle.vim.git" \
+	          "${VIM_INSTALL_DIR}/bundle/Vundle.vim" || \
+	          { return $FAILURE; }
+
+	git clone "${GIT_URL}/preservim/nerdtree.git" \
+	          "${VIM_INSTALL_DIR}/bundle/preservim/nerdtree" || \
+	          { return $FAILURE; }
+
+	git clone "${GIT_URL}/airblade/vim-gitgutter.git" \
+	          "${VIM_INSTALL_DIR}/bundle/airblade/vim-gitgutter" || \
+	          { return $FAILURE; }
+
+	git clone "${GIT_URL}/jiangmiao/auto-pairs.git" \
+	          "${VIM_INSTALL_DIR}/bundle/jiangmiao/auto-pairs" || \
+	          { return $FAILURE; }
+
+	git clone "${GIT_URL}/igankevich/mesonic.git" \
+	          "${VIM_INSTALL_DIR}/bundle/igankevich/mesonic" || \
+	          { return $FAILURE; }
+
+	git clone "${GIT_URL}/tikhomirov/vim-glsl.git" \
+	          "${VIM_INSTALL_DIR}/bundle/tikhomirov/vim-glsl" || \
+	          { return $FAILURE; }
+
+	git clone "${GIT_URL}/kergoth/vim-bitbake.git" \
+	          "${VIM_INSTALL_DIR}/bundle/kergoth/vim-bitbake" || \
+	          { return $FAILURE; }
+
+	git clone "${GIT_URL}/bfrg/vim-cpp-modern.git" \
+	          "${VIM_INSTALL_DIR}/bundle/bfrg/vim-cpp-modern" || \
+	          { return $FAILURE; }
+
+	git clone "${GIT_URL}/vhda/verilog_systemverilog.vim.git" \
+	          "${VIM_INSTALL_DIR}/bundle/vhda/verilog_systemverilog.vim" || \
+	          { return $FAILURE; }
 
 	# Pack Colors
-	git clone "${GIT_URL}/habamax/vim-rst.git"        "${VIM_INSTALL_DIR}/pack/colors/start/vim-rst" || return $FAILURE
+	git clone "${GIT_URL}/habamax/vim-rst.git" \
+	          "${VIM_INSTALL_DIR}/pack/colors/start/vim-rst" || \
+	          { return $FAILURE; }
 
 	# Syntax
-	git clone "${GIT_URL}/under-view/vim-vulkan.git" "${VIM_INSTALL_DIR}/syntax"           || return $FAILURE
-	rm                                               "${VIM_INSTALL_DIR}/syntax/README.md" || return $FAILURE
+	git clone "${GIT_URL}/under-view/vim-vulkan.git" \
+	          "${VIM_INSTALL_DIR}/syntax" || \
+	          { return $FAILURE; }
+
+	rm "${VIM_INSTALL_DIR}/syntax/README.md" || return $FAILURE
 
 	# Autoload
-	git clone "${GIT_URL}/joshdick/onedark.vim.git"       "${VIM_INSTALL_DIR}/onedark.vim" || return $FAILURE
-	cp -ra    "${VIM_INSTALL_DIR}/onedark.vim/autoload"/* "${VIM_INSTALL_DIR}/autoload"    || return $FAILURE
+	git clone "${GIT_URL}/joshdick/onedark.vim.git" \
+	          "${VIM_INSTALL_DIR}/onedark.vim" || \
+	          { return $FAILURE; }
+
+	cp -ra "${VIM_INSTALL_DIR}/onedark.vim/autoload"/* \
+	       "${VIM_INSTALL_DIR}/autoload" || \
+	       { return $FAILURE; }
 
 	# Colors
-	cp -ra    "${VIM_INSTALL_DIR}/onedark.vim/colors"/*   "${VIM_INSTALL_DIR}/colors"      || return $FAILURE
-	rm -rf                                                "${VIM_INSTALL_DIR}/onedark.vim" || return $FAILURE
+	cp -ra "${VIM_INSTALL_DIR}/onedark.vim/colors"/* \
+	       "${VIM_INSTALL_DIR}/colors" || \
+	       { return $FAILURE; }
+
+	rm -rf "${VIM_INSTALL_DIR}/onedark.vim" || return $FAILURE
 
 	return $SUCCESS
 }
@@ -81,7 +122,8 @@ cp -a "${CDIR}/vimrc" "${VIMRC_INSTALL_DIR}" || {
 	exit $FAILURE
 } 
 
+vim +PluginInstall +qall
+
 echo -e "\n\nSuccessfully cloned and install vim plugins + syntax"
-echo "Be sure to open vim and run \":PluginInstall\" to install plugins"
 
 exit $SUCCESS
